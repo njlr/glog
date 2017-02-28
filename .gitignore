@@ -2,3 +2,6 @@ autom4te.cache
 glog-*.tar.gz
 packages/rpm-unknown
 packages/debian-*
+/buck-out/
+/.buckd/
+.buckconfig.local
