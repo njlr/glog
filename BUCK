@@ -65,4 +65,7 @@ cxx_library(
     'src/utilities.cc',
     'src/vlog_is_on.cc',
   ],
+  visibility = [
+    'PUBLIC',
+  ],
 )
