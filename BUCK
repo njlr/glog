@@ -1,3 +1,8 @@
+def merge_dicts(x, y): 
+  z = x.copy()
+  z.update(y)
+  return z
+
 genrule(
   name = 'configure', 
   out = 'out',
@@ -47,14 +52,16 @@ genrule(
 cxx_library(
   name = 'glog',
   header_namespace = '',
-  exported_headers = subdir_glob([
-    ('src', 'glog/**/*.h'),
-  ]),
-  headers = {
-    'config.h': ':config.h',
+  exported_headers = merge_dicts({
     'glog/logging.h': ':logging.h',
     'glog/vlog_is_on.h': ':vlog_is_on.h',
     'glog/raw_logging.h': ':raw_logging.h',
+  },
+  subdir_glob([
+    ('src', 'glog/**/*.h'),
+  ])),
+  headers = {
+    'config.h': ':config.h',
   },
   srcs = [
     'src/demangle.cc',
