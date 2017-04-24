@@ -1,0 +1,6 @@
+{
+  "name": "glog",
+  "dependencies": {
+    "google/gflags": "2.2.0"
+  }
+}

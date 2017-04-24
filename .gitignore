@@ -4,4 +4,6 @@ packages/rpm-unknown
 packages/debian-*
 /buck-out/
 /.buckd/
+/buckaroo/
 .buckconfig.local
+BUCKAROO_DEPS
